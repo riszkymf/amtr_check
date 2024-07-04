@@ -1,0 +1,13 @@
+version: '3'
+services:
+  socket-broadcaster:
+    image: mfriszky/ami_be:socket-broadcaster_latest
+    restart: unless-stopped
+    environment:
+      MYSQL_URL: jdbc:mysql://HOST_SERVER:3306/hsql_db_name
+      MYSQL_USERNAME: MYSQL_USER
+      MYSQL_PASSWORD: MYSQL_PASSWORD
+      HSQLDB_URL: jdbc:hsqldb:hsql://HOST_SERVER:9001/hsql_db_name
+      HSQLDB_USERNAME: HSQL_USER
+      HSQLDB_PASSWORD:
+      SOCKET_PORT: 8003
